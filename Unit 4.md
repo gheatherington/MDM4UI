@@ -1,5 +1,3 @@
-# One Variable Data
-## Measures of Central Tendency
 - A measure of central tendency summarizes a set of numerical data using one value
 - This value describes the centre of the data set
 ### Mean
@@ -22,7 +20,6 @@ $$
 - There can be **NO** mode if they all occur **ONCE**
 - Or multiple if there is a tie
 
-## Grouped Data
 - How do you calculate the mean, median and mode for data that is grouped in a frequency table
 ### Mode
 - Choose the interval with the highest frequency
@@ -38,7 +35,6 @@ $$
 - Multiple the midpoints by the number of frequency
 - Divide the total products by the total frequency
 
-## Outlier
 - An element of data that is very different from the rest
 - Can be multiple pieces of data (not just one)
 
@@ -60,7 +56,6 @@ $$
 - If the data is **symmetric** use either **Mean** or **Median** (should be the same)
 - if the data is qualitative (categorical) use **Mode**
 
-## Types of Distributions
 
 ### Symmetric Distributions
 - **Uniform** - all approximately the same height
