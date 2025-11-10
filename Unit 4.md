@@ -1,3 +1,5 @@
+# One Variable Data
+## Measures of Central Tendency
 - A measure of central tendency summarizes a set of numerical data using one value
 - This value describes the centre of the data set
 ### Mean
@@ -20,6 +22,7 @@ $$
 - There can be **NO** mode if they all occur **ONCE**
 - Or multiple if there is a tie
 
+## Grouped Data
 - How do you calculate the mean, median and mode for data that is grouped in a frequency table
 ### Mode
 - Choose the interval with the highest frequency
@@ -34,7 +37,7 @@ $$
 - Get the mid points of each interval
 - Multiple the midpoints by the number of frequency
 - Divide the total products by the total frequency
-
+## Outlier
 - An element of data that is very different from the rest
 - Can be multiple pieces of data (not just one)
 
@@ -56,11 +59,11 @@ $$
 - If the data is **symmetric** use either **Mean** or **Median** (should be the same)
 - if the data is qualitative (categorical) use **Mode**
 
-
+## Types of Distributions
 ### Symmetric Distributions
 - **Uniform** - all approximately the same height
   ![[Uniform Bar Graph.png]]
-- **Mount** - peaks in the middle and tapers off to both sides
+- **Mound** - peaks in the middle and tapers off to both sides
 	- **NOTE:** *NOT* normal - normal has very specific specifications
   ![[Mount Bar Graph.png]]
 - **U-Shaped** or **Bi-Modal**
@@ -169,8 +172,15 @@ p = 100(\frac{17 + 0.5(1)}{20}) = \boxed{87.5} \\
 \therefore \text{ a score of } 91 \text{ is at the } 88^{th} \text{ percentile}
 \end{gather*}
 $$
+## Measures of Spread
+- Measures of spread tell us whether our data are all very similar and clustered around the mean/median or whether there is a lot of variety in the data and the values are actually quite spread out.
 
-
+### Range
+$$
+\begin{gather*}
+\text{Range} = \text{Max} - \text{Min}
+\end{gather*}
+$$
 ## Spreadsheet
 - Mean $=\text{AVERAGE}(x:y)$
 - Median $=\text{MEDIAN}(x:y)$

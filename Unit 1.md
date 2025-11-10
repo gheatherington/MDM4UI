@@ -4,7 +4,7 @@ $$
 \begin{gather*}
 \text{If events are independent of each other:} \\
 \text{Possible Paths: } m \cdot n \\
-m, n \text{ are } \texttt{\#} \text{ of possibilities} \\ \\
+m, n \text{ are } \# \text{ of possibilities} \\ \\
 \text{When sitting people around a round table:} \\
 (n-1)!
 \end{gather*}
