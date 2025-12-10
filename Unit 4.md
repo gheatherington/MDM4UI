@@ -16,6 +16,11 @@ $$
 ### Median
 - The middle number when the data is ordered from lowest to highest (or highest to lowest)
 - If there is an even number of values, use the average of the two middle numbers
+$$
+\begin{gather*}
+\frac{n+1}{2}
+\end{gather*}
+$$
 
 ### Mode
 - The value that occurs most often (highest frequency)
@@ -124,11 +129,11 @@ R = P(n+1)
 \end{gather*}
 $$
 - Used to find what data value corresponds to a given percentile, where
-	- $p$ is the percentile (in decimal form)
+	- $P$ is the percentile (in decimal form)
 	- $n$ is the number of values
 	- $R$ is the whole number "rank" of the data point.
 - If you get a decimal value, take the average of the 2 points on either side
-**Example** 
+#### **Example** 
 - Find the $80^{th}$ percentile and the $40^{th}$ percentile of the data set below
 $$
 \begin{gather*}
@@ -159,7 +164,7 @@ $$
 	- $n$ is the number of data
 	- $p$ is the percentile
 - **NOTE:** Round to a whole number
-**Example** 
+#### **Example** 
 - In the data set below, what percentile is the data value of $50$? And $91$?
 $$
 \begin{gather*}
@@ -181,6 +186,76 @@ $$
 \text{Range} = \text{Max} - \text{Min}
 \end{gather*}
 $$
+
+### Quartiles
+- Quartiles are three points that divide the data set into four equal groups.
+	-  Q1 is the $25^{th}$ percentile
+	- Q2 is the $50^{th}$ percentile
+	- Q3 is the $75^{th}$ percentile
+- Finding by Hand:
+	- Arrange the data from smallest to highest
+	- Find the median which is your Q2 ($50^{th}$ Percentile)
+	- Then find the exact middle on either side of the median
+#### Interquartile Range
+- The interquartile range is the difference between the 3rd quartile and 1st quartile.
+- The IQR is a better measure of spread than the range because it is not as affected by outliers. It only looks at the $50\%$ of the data in the middle of the data set.
+$$
+\begin{gather*}
+\text{IQR} = \text{Q3} - \text{Q1}
+\end{gather*}
+$$
+## Standard Deviation
+- Standard deviation ($\sigma$) is a measure of the general distance between data points and the mean. It is a very reliable measure of spread.
+$$
+\begin{gather*}
+\sigma = \sqrt{\frac{1}{N}\sum_{i=1}^{N}(x_i - \mu)^2} \\ \ \\
+\text{Where} \\
+\mu = \bar x  = \text{mean}\\
+\sigma^2 = \text{varience} \\ 
+\sigma = \text{standard deviation}
+
+\end{gather*}
+$$
+Steps:
+1. Find the mean for the data set
+2. Subtract the mean from each individual data point
+3. Square each difference from step $2$
+4. Add all of the values from step $3$
+5. Divide the sum from step $4$ by the number pf data values
+6. Take the square root of your answer from step $5$ 
+
+## Relative Deviation
+- Compares the regular standard deviation against the mean of your data set
+- Shows the amount of spread as a percentage
+$$
+\begin{gather*}
+\text{RSD} = \frac{\sigma}{|\bar{x}|} \cdot 100\% = \frac{\sigma}{|\mu|} \cdot 100\% \\ 
+\text{RSD} = \frac{\sqrt{\frac{1}{N}\sum_{i=1}^{N}(x_i - \mu)^2}}{|\mu|}
+\end{gather*}
+$$
+- It’s generally reported to one or two decimal places and often converted to a percent. As the denominator is the absolute value of the mean, the RSD will always be positive.
+- The higher the relative standard deviation, the more spread out the results are from the mean and the lower the relative standard deviation, the more closely the data is clustered around the mean.
+- Particularly useful when comparing data sets and when working with data sets that have extremely large or extremely small data values.
+
+## Identifying Outliers
+- An outlier is identified as being more than $1.5$ times the $\text{IRQ}$ below Q1 or above Q3
+$$
+\begin{gather*}
+x < (\text{Q1} - 1.5\cdot \text{IQR}) \Rightarrow x \text{ is an outlier} \\
+x > (\text{Q3} + 1.5\cdot \text{IQR}) \Rightarrow x \text{ is an outlier}
+\end{gather*}
+$$
+## Confidence Intervals
+- Indication of how accurate estimate about population parameter is from the sample
+- A range where the parameter would fall within
+
+$$
+\begin{gather*}
+\text{MoE} = \pm Z(\frac{\sigma}{\sqrt{n}}) \\ \\
+Z \text{ is the z-score}
+\end{gather*}
+$$
+
 ## Spreadsheet
 - Mean $=\text{AVERAGE}(x:y)$
 - Median $=\text{MEDIAN}(x:y)$
@@ -189,3 +264,16 @@ $$
 	- $x:y$ is the range
 	- $z$ is the percentile as a decimal
 		- For example for the $80^{th}$ percentile $=\text{PERCENTILE}(A1:A10, 0.8)$
+- Range $=\text{MAX}(x:y)-\text{MIN}(x:y)$ 
+- Quartiles $=\text{QUARTILE}(x:y, z)$ , where:
+	- $x:y$ is the range
+	- $z$ is the quartile you want ($1, 2, 3$)
+		- For example: 1st Quartile $=\text{QUARTILE}(B1:A10, 1)$ 
+- IQR $=\text{QUARTILE}(x:y, 3) - \text{QUARTILE}(x:y, 1)$ 
+- Standard Deviation $=\text{STDEVP}(x:y)$ or $=\text{STDEV.P}(x:y)$ 
+	- The formulas are different for population standard deviation and sample deviation are different
+	- ONLY use **population** formula
+- Margin of Error $=\text{CONFIDENCE.T}(1-p, \sigma, n)$, where:
+	- $p$ is the confidence level
+	- $\sigma$ is the standard Deviation 
+	- $n$ is the number of trials
